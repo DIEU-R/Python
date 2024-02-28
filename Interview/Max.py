@@ -1,7 +1,3 @@
-from pickle import NONE
-from uu import Error
-
-
 li=[1,2,3,34,23,564,6,546,234,4,5,6]
 def Max(list :list[int])->int|None:
     match list:
