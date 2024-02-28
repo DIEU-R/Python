@@ -13,7 +13,7 @@ def DAT2():
     for i in tem:
         if i>Avg:
             d_day += 1
-    print("Number of Days having Temperature above Average "+ str(d_day))
+    print("Days having Temperature above Average : "+ str(d_day))
     
 
 DAT2()
