@@ -1,13 +1,3 @@
-# def Fib(num):
-#     for i in range(num):
-#         if num==0:
-#             return 0
-#         elif num==1:
-#             return 1
-#         return str(Fib(num-1)) + str(Fib(num-2))
-        
-
-# print(Fib(0))
 
 def Fib(num):
     if (num==0 or num==1):
@@ -30,3 +20,8 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 
 print(allFib(5))
+
+def Fibonacci(num :int) -> int:
+    match num:
+        case 0 | 1:return num 
+        case _ : return Fibonacci(num-1) + Fibonacci(num-2)
