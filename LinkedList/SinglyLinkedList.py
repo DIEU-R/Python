@@ -89,6 +89,12 @@ class SLinkedList:
                 tempNode.next = nextNode.next
 
 
+    def deleteEntireSLL(self):
+        if self.head is None:
+            print("The SLL does not exist")
+        else:
+            self.head = None
+            self.tail = None
 
 
 singlyLinkedList = SLinkedList()
@@ -106,4 +112,7 @@ print(singlyLinkedList.searchSLL(10))
 
 
 singlyLinkedList.deleteNode(1)
+print([node.value for node in singlyLinkedList])
+
+singlyLinkedList.deleteEntireSLL()
 print([node.value for node in singlyLinkedList])
