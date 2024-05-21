@@ -61,6 +61,23 @@ class CircularSinglyLinkedList:
                 if node == self.tail.next:
                     break
 
+
+
+    def searchCSLL(self, nodeValue):
+        if self.head is None:
+            return "The circular Singly Linked List does not exist"
+        else:
+            tempNode = self.head
+            while tempNode:
+                if tempNode.value == nodeValue:
+                    return (list([node.value for node in circularSLL]).index(tempNode.value))
+                tempNode = tempNode.next
+                if tempNode == self.tail.next:
+                    return "The node does not exist in the CSLL"
+                
+
+
+
 circularSLL = CircularSinglyLinkedList()
 print(circularSLL.createCSLL(10))
 circularSLL.insertCSLL(101,0)
@@ -70,3 +87,4 @@ circularSLL.insertCSLL(1003,2)
 print([node.value for node in circularSLL])
 
 circularSLL.traverseCSLL()
+print(circularSLL.searchCSLL(102))
