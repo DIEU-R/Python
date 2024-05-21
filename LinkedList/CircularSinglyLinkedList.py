@@ -112,6 +112,15 @@ class CircularSinglyLinkedList:
         return "The node has been successfully deleted"
 
 
+    def deleteCSLL(self):
+        if self.head is None:
+            return "The Circular Singly Linked List does not exist"
+        else:
+            self.head = None
+            self.tail.next = None
+            self.tail = None
+
+
 circularSLL = CircularSinglyLinkedList()
 print(circularSLL.createCSLL(10))
 circularSLL.insertCSLL(101,0)
@@ -124,4 +133,7 @@ circularSLL.traverseCSLL()
 print(circularSLL.searchCSLL(102))
 
 circularSLL.deleteNode(2)
+print([node.value for node in circularSLL])
+
+circularSLL.deleteCSLL()
 print([node.value for node in circularSLL])
