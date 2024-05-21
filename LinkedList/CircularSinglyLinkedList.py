@@ -76,6 +76,40 @@ class CircularSinglyLinkedList:
                     return "The node does not exist in the CSLL"
                 
 
+    def deleteNode(self, location):
+        if self.head is None:
+            return "The Circular Singly LinkedList does not exist"
+        else:
+            if location ==0:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                    self.head.next = None
+                else:
+                    self.head = self.head.next
+                    self.tail.next = self.head
+            elif location ==1:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                    self.head.next = None
+                else:
+                    tempNode = self.head
+                    while tempNode is not None:
+                        if  tempNode.next == self.tail:
+                            break
+                        tempNode = tempNode.next
+                    tempNode.next = self.head
+                    self.tail = tempNode
+            else:
+                tempNode = self.head
+                index = 0
+                while index < location-1:
+                    tempNode = tempNode.next
+                    index += 1
+                nextNode = tempNode.next
+                tempNode.next = nextNode.next
+        return "The node has been successfully deleted"
 
 
 circularSLL = CircularSinglyLinkedList()
@@ -88,3 +122,6 @@ print([node.value for node in circularSLL])
 
 circularSLL.traverseCSLL()
 print(circularSLL.searchCSLL(102))
+
+circularSLL.deleteNode(2)
+print([node.value for node in circularSLL])
