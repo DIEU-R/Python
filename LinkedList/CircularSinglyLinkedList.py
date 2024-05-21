@@ -50,6 +50,16 @@ class CircularSinglyLinkedList:
                 newNode.next = nextNode             
             return "The node has been successfully inserted in the Circular Singly Linked List"
 
+    def traverseCSLL(self):
+        if self.head is None:
+            print("The Circular Singly Linked List does not exist")
+        else:
+            node = self.head
+            while node:
+                print(node.value)
+                node = node.next
+                if node == self.tail.next:
+                    break
 
 circularSLL = CircularSinglyLinkedList()
 print(circularSLL.createCSLL(10))
@@ -58,3 +68,5 @@ circularSLL.insertCSLL(102,1)
 circularSLL.insertCSLL(1003,2)
 
 print([node.value for node in circularSLL])
+
+circularSLL.traverseCSLL()
