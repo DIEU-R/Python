@@ -61,6 +61,15 @@ class DoublyLinkedList:
                 print(self.head.value)
                 self.head = self.head.next
 
+    def reversetraverseDLL(self):
+        if self.head is None:
+            return "The DLL does not exist"
+        else:
+            tempNode = self.tail
+            while tempNode:
+                print(tempNode.value)
+                tempNode = tempNode.prev
+
 
 doublyLL= DoublyLinkedList()
 doublyLL.createDLL(10)
@@ -74,5 +83,5 @@ doublyLL.insertNode(60,4)
 doublyLL.insertNode(70,5)
 print([node.value for node in doublyLL])
 
-
+doublyLL.reversetraverseDLL()
 doublyLL.traverseDLL()
