@@ -52,7 +52,14 @@ class DoublyLinkedList:
                 tempNode.next = newNode
             return "The node has been successfully inserted"
 
-
+    def traverseDLL(self):
+        if self.head is None:
+            return "The DLL does not exist"
+        else:
+            #tempNode = self.head
+            while self.head:
+                print(self.head.value)
+                self.head = self.head.next
 
 
 doublyLL= DoublyLinkedList()
@@ -66,3 +73,6 @@ doublyLL.insertNode(50,3)
 doublyLL.insertNode(60,4)
 doublyLL.insertNode(70,5)
 print([node.value for node in doublyLL])
+
+
+doublyLL.traverseDLL()
