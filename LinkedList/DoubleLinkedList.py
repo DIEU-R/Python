@@ -112,6 +112,17 @@ class DoublyLinkedList:
                 curNode.next.prev = curNode
             print( "The node has been successfully deleted" )           
 
+    def deleteEntireDLL(self):
+        if self.head is None:
+            print("The DLL does not exist")
+        else:
+            tempNode = self.head
+            while tempNode:
+                tempNode.prev = None
+                tempNode = tempNode.next
+            self.head = None
+            self.tail = None
+            print("The DLL has been successfully deleted")
 
 
 
@@ -132,4 +143,7 @@ print(doublyLL.searchDLL(50))
 doublyLL.traverseDLL()
 
 doublyLL.deleteNode(0)
+print([node.value for node in doublyLL])
+
+doublyLL.deleteEntireDLL()
 print([node.value for node in doublyLL])
