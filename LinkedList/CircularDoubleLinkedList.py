@@ -55,16 +55,27 @@ class CircularDoubleLinkedList:
                 tempNode.next = newNode
             return "The node has been successfully inserted in the Circular Double Linked List"
 
-
+    def traverseCDLL(self):
+        if self.head is None:
+            return "The CDLL does not exist"
+        else:
+            tempNode = self.head
+            while tempNode:
+                print(tempNode.value)
+                tempNode = tempNode.next
+                if tempNode == self.tail:
+                    break
 
 
 circularDLL = CircularDoubleLinkedList()
-print(circularDLL.createCDLL(11))
+circularDLL.createCDLL(11)
 print([node.value for node in circularDLL])
 
-circularDLL.insertCDLL(0,0)
+circularDLL.insertCDLL(5,0)
 circularDLL.insertCDLL(1,1)
 circularDLL.insertCDLL(2,1)
 circularDLL.insertCDLL(3,1)
 circularDLL.insertCDLL(30,1)
 print([node.value for node in circularDLL])
+
+circularDLL.traverseCDLL()
