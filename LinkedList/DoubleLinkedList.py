@@ -95,7 +95,7 @@ class DoublyLinkedList:
                 else:
                     self.head = self.head.next
                     self.head.prev = None
-            elif location == -1:
+            elif location == 1:
                 if self.head == self.tail:
                     self.head = None
                     self.tail = None
