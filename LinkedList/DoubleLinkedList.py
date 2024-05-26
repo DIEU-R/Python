@@ -27,12 +27,12 @@ class DoublyLinkedList:
 
     def insertNode(self, value,location):
         if self.head is None:
-            return "The DLL does not exist"
+            print("The DLL does not exist")
         else:
             newNode = Node(value)
             if location == 0:
-                newNode.next = self.head
                 newNode.prev = None
+                newNode.next = self.head
                 self.head.prev = newNode
                 self.head = newNode
             elif location == 1:
@@ -71,6 +71,20 @@ class DoublyLinkedList:
                 tempNode = tempNode.prev
 
 
+    def searchDLL(self, nodeValue):
+        if self.head is None:
+            return "The DLL does not exist"
+        else:
+            tempNode = self.head
+            idx = 0
+            while tempNode:
+                if tempNode.value == nodeValue:
+                    return tempNode.value, idx
+                tempNode = tempNode.next
+                idx += 1
+            return "The value does not exist in the DLL"
+
+
 doublyLL= DoublyLinkedList()
 doublyLL.createDLL(10)
 print([node.value for node in doublyLL])
@@ -82,6 +96,7 @@ doublyLL.insertNode(50,3)
 doublyLL.insertNode(60,4)
 doublyLL.insertNode(70,5)
 print([node.value for node in doublyLL])
-
+print(doublyLL.searchDLL(10))
 doublyLL.reversetraverseDLL()
+print(doublyLL.searchDLL(50))
 doublyLL.traverseDLL()
