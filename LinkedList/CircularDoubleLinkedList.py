@@ -62,10 +62,20 @@ class CircularDoubleLinkedList:
             tempNode = self.head
             while tempNode:
                 print(tempNode.value)
-                tempNode = tempNode.next
                 if tempNode == self.tail:
                     break
+                tempNode = tempNode.next
 
+    def reverseTraverseCDLL(self):
+        if self.head is None:
+            return "The CDLL does not Exist"
+        else:
+            tempNode = self.tail
+            while tempNode:
+                print(tempNode.value)
+                if tempNode == self.head:
+                    break
+                tempNode = tempNode.prev
 
 circularDLL = CircularDoubleLinkedList()
 circularDLL.createCDLL(11)
@@ -78,4 +88,6 @@ circularDLL.insertCDLL(3,1)
 circularDLL.insertCDLL(30,1)
 print([node.value for node in circularDLL])
 
-circularDLL.traverseCDLL()
+circularDLL.traverseCDLL()   
+
+circularDLL.reverseTraverseCDLL()
