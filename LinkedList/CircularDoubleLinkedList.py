@@ -38,7 +38,7 @@ class CircularDoubleLinkedList:
                 self.head.prev = newNode
                 self.head = newNode
                 self.tail.next = newNode
-            elif location == -1:
+            elif location == 1:
                 newNode.next = self.head
                 newNode.prev = self.tail
                 self.tail.next = newNode
@@ -66,5 +66,5 @@ circularDLL.insertCDLL(0,0)
 circularDLL.insertCDLL(1,1)
 circularDLL.insertCDLL(2,1)
 circularDLL.insertCDLL(3,1)
-circularDLL.insertCDLL(4,-1)
+circularDLL.insertCDLL(30,1)
 print([node.value for node in circularDLL])
