@@ -125,6 +125,20 @@ class CircularDoubleLinkedList:
                 tempNode.next.prev = tempNode
             print( "The node has been successfully deleted from the CDLL")
 
+    def deleteEntireCDLL(self):
+        if self.head is None:
+            return "The CLL does not exist"
+        else:
+            self.tail.next = None
+            tempNode = self.head
+            while tempNode:
+                tempNode.prev = None
+                tempNode = tempNode.next
+            self.head = None
+            self.tail = None
+            print( "The CDLL has been successfully deleted")
+
+
 circularDLL = CircularDoubleLinkedList()
 circularDLL.createCDLL(11)
 print([node.value for node in circularDLL])
@@ -143,4 +157,7 @@ circularDLL.reverseTraverseCDLL()
 print(circularDLL.searchCDLL(30))
 
 circularDLL.deleteCDLL(2)
+print([node.value for node in circularDLL])
+
+circularDLL.deleteEntireCDLL()
 print([node.value for node in circularDLL])
