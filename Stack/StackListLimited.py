@@ -32,6 +32,25 @@ class Stack:
             return "The elements has benn successfully Inserted"
         
 
+    # pop
+    def pop(self):
+        if self.isEmpty():
+            return "There is no element to pop"
+        else:
+            return self.list.pop()
+        
+
+    # peek
+    def peek(self):
+        if self.isEmpty():
+            return "There is no element to peek"
+        else:
+            return self.list[len(self.list)-1]
+        
+    # delete
+    def delete(self):
+        self.list = None
+
 
 customStack = Stack(4)
 print(customStack.isEmpty())
@@ -40,3 +59,6 @@ customStack.push(1)
 customStack.push(2)
 customStack.push(3)
 print(customStack)
+customStack.pop()
+print(customStack.peek())
+print(customStack.delete())
