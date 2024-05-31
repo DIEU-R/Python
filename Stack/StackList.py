@@ -18,13 +18,31 @@ class Stack:
         self.list.append(values)
         return "The elements has been successfully inserted"
 
+    # pop
+    def pop(self):
+        if self.list == []:
+            return "There is no element to pop"
+        else:
+            return self.list.pop()
+        
 
+    # peek
+    def peek(self):
+        if self.list == []:
+            return "There is no element to peek"
+        else:
+            return self.list[len(self.list)-1]
 
 
 customStack = Stack()
-print(customStack.isEmpty())
 customStack.push(1)
 customStack.push(2)
 customStack.push(3)
+#print(customStack)
+print(customStack.peek())
+print(customStack)
+
+print(customStack.pop())
+print(customStack.pop())
 print(customStack)
 print(customStack.isEmpty())
