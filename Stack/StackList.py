@@ -14,5 +14,17 @@ class Stack:
         else:
             return False
 
+    def push(self, values):
+        self.list.append(values)
+        return "The elements has been successfully inserted"
+
+
+
+
 customStack = Stack()
+print(customStack.isEmpty())
+customStack.push(1)
+customStack.push(2)
+customStack.push(3)
+print(customStack)
 print(customStack.isEmpty())
