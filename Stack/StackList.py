@@ -32,6 +32,10 @@ class Stack:
             return "There is no element to peek"
         else:
             return self.list[len(self.list)-1]
+        
+    # delete
+    def delete(self):
+        self.list = None
 
 
 customStack = Stack()
@@ -45,4 +49,5 @@ print(customStack)
 print(customStack.pop())
 print(customStack.pop())
 print(customStack)
-print(customStack.isEmpty())
+print(customStack.isEmpty()) 
+print(customStack.delete())
